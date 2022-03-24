@@ -30,7 +30,7 @@ function getWords(file) {
     rawFile.send(null);
 }
 
-getWords('./words.txt');
+getWords('./words2.txt');
 
 var toGuess = wordList[Math.floor(Math.random() * wordList.length)].toUpperCase();
 console.log("toGuess: " + toGuess);
@@ -332,13 +332,13 @@ async function bot() {
     var after = now.getTime();
     var calcTime = (after - before) / 1000;
 
-    document.getElementById("timeStat").innerHTML = `Time: ${calcTime}s`;
-    document.getElementById("wonStat").innerHTML = `Wins: ${wonStat}`;
-    document.getElementById("lostStat").innerHTML = `Losses: ${runs - wonStat}`;
-    document.getElementById("totalGuessedLettersStat").innerHTML = `Total letters: ${totalLetters}`;
+    document.getElementById("timeStat").innerHTML = `<u>Time:</u> ${calcTime}s`;
+    document.getElementById("wonStat").innerHTML = `<u>Wins:</u> ${wonStat}`;
+    document.getElementById("lostStat").innerHTML = `<u>Losses:</u> ${runs - wonStat}`;
+    document.getElementById("totalGuessedLettersStat").innerHTML = `<u>Total letters:</u> ${totalLetters}`;
     wonStat = 0;
     totalLetters = 0;
-    document.getElementById("averageWordsRightStat").innerHTML = `Average: ${average}%`;
+    document.getElementById("averageWordsRightStat").innerHTML = `<u>Average:</u> ${average}%`;
 
     if (avgWordCount.length > 0){
         var count = 0;
@@ -347,16 +347,16 @@ async function bot() {
         }
 
         count = count / avgWordCount.length;
-        document.getElementById("averageLetterGoodWordStat").innerHTML = `Avg letters/good word: ${count.toFixed(1)}`;
+        document.getElementById("averageLetterGoodWordStat").innerHTML = `<u>Avg letters/good word:</u> ${count.toFixed(1)}`;
         var bestGuess = avgWordCount.reduce((a, b) => Math.min(a, b));
-        document.getElementById("minGuessStat").innerHTML = `Best guess: ${bestGuess}`;
+        document.getElementById("minGuessStat").innerHTML = `<u>Best guess:</u> ${bestGuess}`;
         var worstGuess = Math.max(...avgWordCount);
-        document.getElementById("maxGuessStat").innerHTML = `Worst guess: ${worstGuess}`;
+        document.getElementById("maxGuessStat").innerHTML = `<u>Worst guess:</u> ${worstGuess}`;
     }
     else{
-        document.getElementById("averageLetterGoodWordStat").innerHTML = `Avg letters/good word: -`;
-        document.getElementById("minGuessStat").innerHTML = `Best guess: -`;
-        document.getElementById("maxGuessStat").innerHTML = `Worst guess: -`;
+        document.getElementById("averageLetterGoodWordStat").innerHTML = `<u>Avg letters/good word:</u> -`;
+        document.getElementById("minGuessStat").innerHTML = `<u>Best guess:</u> -`;
+        document.getElementById("maxGuessStat").innerHTML = `<u>Worst guess:</u> -`;
     }
 
     console.log("Time: " + calcTime + "s");
@@ -425,13 +425,13 @@ async function dummybot(){
     var after = now.getTime();
     var calcTime = (after - before) / 1000;
 
-    document.getElementById("timeStat").innerHTML = `Time: ${calcTime}s`;
-    document.getElementById("wonStat").innerHTML = `Wins: ${wonStat}`;
-    document.getElementById("lostStat").innerHTML = `Losses: ${runs - wonStat}`;
-    document.getElementById("totalGuessedLettersStat").innerHTML = `Total letters: ${totalLetters}`;
+    document.getElementById("timeStat").innerHTML = `<u>Time:</u> ${calcTime}s`;
+    document.getElementById("wonStat").innerHTML = `<u>Wins:</u> ${wonStat}`;
+    document.getElementById("lostStat").innerHTML = `<u>Losses:</u> ${runs - wonStat}`;
+    document.getElementById("totalGuessedLettersStat").innerHTML = `<u>Total letters:</u> ${totalLetters}`;
     wonStat = 0;
     totalLetters = 0;
-    document.getElementById("averageWordsRightStat").innerHTML = `Average: ${average}%`;
+    document.getElementById("averageWordsRightStat").innerHTML = `<u>Average:</u> ${average}%`;
 
     if (avgWordCount.length > 0){
         var count = 0;
@@ -440,16 +440,16 @@ async function dummybot(){
         }
 
         count = count / avgWordCount.length;
-        document.getElementById("averageLetterGoodWordStat").innerHTML = `Avg letters/good word: ${count.toFixed(1)}`;
+        document.getElementById("averageLetterGoodWordStat").innerHTML = `<u>Avg letters/good word:</u> ${count.toFixed(1)}`;
         var bestGuess = avgWordCount.reduce((a, b) => Math.min(a, b));
-        document.getElementById("minGuessStat").innerHTML = `Best guess: ${bestGuess}`;
+        document.getElementById("minGuessStat").innerHTML = `<u>Best guess:</u> ${bestGuess}`;
         var worstGuess = Math.max(...avgWordCount);
-        document.getElementById("maxGuessStat").innerHTML = `Worst guess: ${worstGuess}`;
+        document.getElementById("maxGuessStat").innerHTML = `<u>Worst guess:</u> ${worstGuess}`;
     }
     else{
-        document.getElementById("averageLetterGoodWordStat").innerHTML = `Avg letters/good word: -`;
-        document.getElementById("minGuessStat").innerHTML = `Best guess: -`;
-        document.getElementById("maxGuessStat").innerHTML = `Worst guess: -`;
+        document.getElementById("averageLetterGoodWordStat").innerHTML = `<u>Avg letters/good word:</u> -`;
+        document.getElementById("minGuessStat").innerHTML = `<u>Best guess:</u> -`;
+        document.getElementById("maxGuessStat").innerHTML = `<u>Worst guess:</u> -`;
     }
 
     console.log("Time: " + calcTime + "s");
