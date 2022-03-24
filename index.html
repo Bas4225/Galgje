@@ -2,9 +2,11 @@
 <html>
     <head>
         <title>Hangman</title>
-        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="stylesheet" type="text/css" href="newStyles.css">
+        <meta name="viewport" content="width=device-width, initial-scale = 1.0">
         
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1819439884114911" crossorigin="anonymous"></script>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1819439884114911"
+     crossorigin="anonymous"></script>
     </head>
    
     <body>
@@ -48,25 +50,31 @@
 
             <button onclick="reset()" id="resetButton">Reset</button>
             
-            </div>   
-            <div id="bot">
-            <div id="curve_chart"></div>
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-                
+        </div>
+        <div class="container">
+            <div id="ad">
+                <h3>Ad title</h3>
+                <p>Ad description with product information</p>
+            </div>
+        </div>
+        <div id="bot">
+            <div id="title"><u>Hangman Bots</u></div>
+            <div class="container"><div id="curve_chart"></div></div>
+            
             <script>
                 let kidsDied = 0;
                 window.setInterval(function() {
                     kidsDied += 0.001;
-                    document.getElementById("kidsDiedStat").innerHTML = `Kids died: ${kidsDied.toFixed(3)}`;
+                    document.getElementById("kidsDiedStat").innerHTML = `<u>Kids died:</u> ${kidsDied.toFixed(3)}`;
                 }, 4);
                 let kidsBorn = 0;
                 window.setInterval(function() {
                   kidsBorn += 0.0045;
-                  document.getElementById("kidsBornStat").innerHTML = `Kids born: ${kidsBorn.toFixed(3)}`;
+                  document.getElementById("kidsBornStat").innerHTML = `<u>Kids born:</u> ${kidsBorn.toFixed(3)}`;
                 }, 1);
             </script>
                 
-            <span><input id="runsInput" type='number' min="1" max="10000" value="50"> <strong>Runs</strong></span>
+            <span><input id="runsInput" type='number' min="1" max="10000" value="50"> Runs</span>
             <br>
             <button onclick="dummybot()" id="dummybtn">Dummy</button>
 
@@ -77,16 +85,16 @@
             <div class="container">
                 <div id="scoreboard" class="scoreboard"><div id="title">Scoreboard</div>
                     <ul>
-                        <li><div id="timeStat">Time:</div></li>
-                        <li><div id="wonStat">Wins:</div></li>
-                        <li><div id="lostStat">Losses:</div></li>
-                        <li><div id="totalGuessedLettersStat">Total letter:</div></li>
-                        <li><div id="averageWordsRightStat">Average:</div></li>
-                        <li><div id="averageLetterGoodWordStat">Avg letters/good word:</div></li>
-                        <li><div id="minGuessStat">Best guess:</div></li>
-                        <li><div id="maxGuessStat">Worst guess:</div></li>
-                        <li><div id="kidsDiedStat">Kids died: </div></li>
-                        <li><div id="kidsBornStat">Kids born: </div></li>
+                        <li><div id="timeStat"><u>Time:</u></div></li>
+                        <li><div id="wonStat"><u>Wins:</u></div></li>
+                        <li><div id="lostStat"><u>Losses:</u></div></li>
+                        <li><div id="totalGuessedLettersStat"><u>Total letter:</u></div></li>
+                        <li><div id="averageWordsRightStat"><u>Average:</u></div></li>
+                        <li><div id="averageLetterGoodWordStat"><u>Avg letters/good word:</u></div></li>
+                        <li><div id="minGuessStat"><u>Best guess:</u></div></li>
+                        <li><div id="maxGuessStat"><u>Worst guess:</u></div></li>
+                        <li><div id="kidsDiedStat"><u>Kids died: </u></div></li>
+                        <li><div id="kidsBornStat"><u>Kids born: </u></div></li>
                         
                     </ul>
                 </div>
