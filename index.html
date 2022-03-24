@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hangman</title>
+        <link rel="stylesheet" type="text/css" href="/styles.css">
+    </head>
+   
+    <body>
+        <div id="game">
+            <div id="toGuess"></div>
+            <div id="guessesDiv">Remaining guesses: 6</div>
+
+            <div id="animation">
+                <img id="image" src="Hangman png's/hangman6.png" height="500px" width="500px">
+            </div>
+      
+            <button onclick="getInput('A')" id="A">A</button>
+            <button onclick="getInput('B')" id="B">B</button>
+            <button onclick="getInput('C')" id="C">C</button>
+            <button onclick="getInput('D')" id="D">D</button>
+            <button onclick="getInput('E')" id="E">E</button>
+            <button onclick="getInput('F')" id="F">F</button>
+            <button onclick="getInput('G')" id="G">G</button>
+            <button onclick="getInput('H')" id="H">H</button>
+            <button onclick="getInput('I')" id="I">I</button>
+            <br>
+            <button onclick="getInput('J')" id="J">J</button>
+            <button onclick="getInput('K')" id="K">K</button>
+            <button onclick="getInput('L')" id="L">L</button>
+            <button onclick="getInput('M')" id="M">M</button>
+            <button onclick="getInput('N')" id="N">N</button>
+            <button onclick="getInput('O')" id="O">O</button>
+            <button onclick="getInput('P')" id="P">P</button>
+            <button onclick="getInput('Q')" id="Q">Q</button>
+            <br>
+            <button onclick="getInput('R')" id="R">R</button>
+            <button onclick="getInput('S')" id="S">S</button>
+            <button onclick="getInput('T')" id="T">T</button>
+            <button onclick="getInput('U')" id="U">U</button>
+            <button onclick="getInput('V')" id="V">V</button>
+            <button onclick="getInput('W')" id="W">W</button>
+            <button onclick="getInput('X')" id="X">X</button>
+            <button onclick="getInput('Y')" id="Y">Y</button>
+            <button onclick="getInput('Z')" id="Z">Z</button>
+            <br>
+
+            <button onclick="reset()" id="resetButton">Reset</button>
+            
+            </div>   
+            <div id="bot">
+            <div id="curve_chart"></div>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                
+            <script>
+                let kidsDied = 0;
+                window.setInterval(function() {
+                    kidsDied += 0.001;
+                    document.getElementById("kidsDiedStat").innerHTML = `Kids died: ${kidsDied.toFixed(3)}`;
+                }, 4);
+                let kidsBorn = 0;
+                window.setInterval(function() {
+                  kidsBorn += 0.0045;
+                  document.getElementById("kidsBornStat").innerHTML = `Kids born: ${kidsBorn.toFixed(3)}`;
+                }, 1);
+            </script>
+                
+            <span><input id="runsInput" type='number' min="1" max="10000" value="50"> <strong>Runs</strong></span>
+            <br>
+            <button onclick="dummybot()" id="dummybtn">Dummy</button>
+
+            <button onclick="bot()" id="botbtn">Mark</button>
+
+            <button onclick="callBoth()" id="bothbtn">Both</button>
+            <br><br>
+            <div class="container">
+                <div id="scoreboard" class="scoreboard"><div id="title">Scoreboard</div>
+                    <ul>
+                        <li><div id="timeStat">Time:</div></li>
+                        <li><div id="wonStat">Wins:</div></li>
+                        <li><div id="lostStat">Losses:</div></li>
+                        <li><div id="totalGuessedLettersStat">Total letter:</div></li>
+                        <li><div id="averageWordsRightStat">Average:</div></li>
+                        <li><div id="averageLetterGoodWordStat">Avg letters/good word:</div></li>
+                        <li><div id="minGuessStat">Best guess:</div></li>
+                        <li><div id="maxGuessStat">Worst guess:</div></li>
+                        <li><div id="kidsDiedStat">Kids died: </div></li>
+                        <li><div id="kidsBornStat">Kids born: </div></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>  
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    </body>
+    <script src="script.js"></script>
+</html>
